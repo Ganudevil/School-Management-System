@@ -75,8 +75,8 @@ npm run dev
 
 ### `Homepage`
 
-[![Screenshot-from-2021-04-30-16-59-15.png](https://i.postimg.cc/jjHs8psH/Screenshot-from-2021-04-30-16-59-15.png)](https://postimg.cc/67QJq14q)
 
 
+![Screenshot (77)](https://github.com/user-attachments/assets/d5817181-1b7e-4a8c-8130-f6e0419ede5e)
 
 
