@@ -14,7 +14,7 @@ https://manageschool1.herokuapp.com/
 ### `LOGIN AS ADMIN AND SEE EVERYTHING`
 
 ```bash
-Login email="admin1@example.com"
+Login email="ganudevil"
 Login password="adminpassword1"
 ```
 
@@ -23,7 +23,7 @@ Login password="adminpassword1"
 Clone the repo
 
 ```bash
-git clone https://github.com/upendradhamala/School-Management-System.git
+git clone https://github.com/ganudevil/School-Management-System.git
 ```
 
 ### Getting Started
@@ -46,7 +46,7 @@ Create a .env file in the root and add the following. You can see .env.example f
 
 ```bash
 NODE_ENV=development
-PORT=5000
+PORT=3000
 MONGO_URI="Your mongo uri"
 JWT_SECRET="Anything you like"
 CLOUDINARY_URL ="your cloudinary url"
