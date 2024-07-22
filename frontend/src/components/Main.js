@@ -3,13 +3,12 @@ import Loader from '../components/Loader'
 import axios from 'axios'
 import './Main.css'
 import DashboardCard from './DashboardCard'
-import Footer from './Footer'
 const Main = () => {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState()
+
   useEffect(() => {
-    //  console.log("this is me upendra dhamala.")
-    // await axios.get('/api/students/:classes')
+
     const fetchItems = async () => {
       setLoading(true)
       const { data } = await axios.get('/dashboard')
@@ -26,7 +25,7 @@ const Main = () => {
         {loading ? (
           <Loader />
         ) : (
-          <div className='card-handler'>
+          <div className='card-handler bg1' style={{ width: "100vw", height: "100vh" }}>
             {/* {loading? <Loader/
    {}>} */}
             {/* {console.log('dfsdf')} */}
@@ -45,8 +44,6 @@ const Main = () => {
           </div>
         )}
       </div>
-
-      {!loading && <Footer />}
     </main>
   )
 }

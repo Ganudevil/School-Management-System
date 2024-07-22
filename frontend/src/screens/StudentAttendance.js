@@ -5,8 +5,8 @@ import Classes from './classData'
 import ClassItems from '../components/ClassItems'
 const StudentAttendance = () => {
   return (
-    <div className='container2'>
-      <div className='outer'>
+    <div className='container2 bg2' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className='outer' style={{width: "100%"}}>
         <h3>Select the Class </h3>
 
         <div className='classes'>

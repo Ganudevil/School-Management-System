@@ -37,7 +37,7 @@ const TeacherRegister = ({ history }) => {
     const file = e.target.files[0]
     const formData = new FormData()
     formData.append('file', file)
-    formData.append('upload_preset',process.env.REACT_APP_CLOUD_PRESET)
+    formData.append('upload_preset', process.env.REACT_APP_CLOUD_PRESET)
     setUploading(true)
     await axios({
       url: `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/image/upload`,
@@ -97,11 +97,12 @@ const TeacherRegister = ({ history }) => {
     }
   }, [userCred, history])
   return (
-    <div className='container1' style={{ marginTop: '10px' }}>
+    <div className='container1 bg2' style={{ marginTop: '0px', minHeight: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center" }}>
+
       {loading ? (
         <Loader />
       ) : (
-        <div className='outer-layout'>
+        <div className='outer-layout' style={{width: "100%"}}>
           <h1>Register Teacher</h1>
           {success && valid && (
             <Message
@@ -214,7 +215,7 @@ const TeacherRegister = ({ history }) => {
                   required
                 />
               </div>
-              <div className='form-control'>
+              {/* <div className='form-control'>
                 <label htmlFor='name'>
                   Upload Picture
                   <input
@@ -231,7 +232,7 @@ const TeacherRegister = ({ history }) => {
                     message='Picture uploaded successfully'
                   />
                 )}
-              </div>
+              </div> */}
               {/* <div className="register-btn"> */}
               {/* </div> */}
             </div>

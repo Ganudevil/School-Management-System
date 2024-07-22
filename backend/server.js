@@ -13,13 +13,16 @@ import studentRoutes from './routes/studentRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
 import teacherRoutes from './routes/teacherRoutes.js'
 import staffRoutes from './routes/staffRoutes.js'
+import cors from "cors"
 // const items = require('./data/Data')
 // const classes = require('./data/ClassData')
 // d0t
 dotenv.config()
 connectDB()
 const app = express()
+app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/dashboard', async (req, res) => {
   const items = await Dashboard.find()

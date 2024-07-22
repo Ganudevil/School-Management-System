@@ -3,6 +3,7 @@ import asyncHandler from 'express-async-handler'
 import Admin from '../models/adminModel.js'
 import generateToken from '../utils/generateToken.js'
 import protect from '../middleware/authMiddleware.js'
+import bcrypt from "bcryptjs"
 
 const router = express.Router()
 
@@ -25,6 +26,11 @@ router.post(
       res.status(401)
       throw new Error('Invalid email or password')
     }
+      //   const { email, password, name } = req.body
+      //   const salt = await bcrypt.genSalt(10);
+      //  const a = await bcrypt.hash(password, salt )
+      //   await Admin.create({name, email, password:a })
+      // return res.send("success")
   })
 )
 

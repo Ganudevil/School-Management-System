@@ -31,8 +31,9 @@ const StudentDetails = ({ match }) => {
     e.preventDefault()
     console.log('clicked')
   }
+
   return (
-    <div className='container3'>
+    <div className='container3 bg2'>
       <div className='outer'>
         <input type='text' placeholder='Search for student...' />
         <span className='search-icon' onClick={searchSubmit}>
@@ -48,7 +49,7 @@ const StudentDetails = ({ match }) => {
               <thead>
                 <tr>
                   <th>SN</th>
-                  <th>Photo</th>
+                  {/* <th>Photo</th> */}
                   <th>Student Name</th>
                   <th>Class</th>
                   <th>Roll No</th>
@@ -65,9 +66,9 @@ const StudentDetails = ({ match }) => {
                 {students.map((data) => (
                   <tr key={data._id} className='contents'>
                     <td>{i++}</td>
-                    <td>
+                    {/* <td>
                       <img style={{ height: '50px' }} src={data.image} alt='' />
-                    </td>
+                    </td> */}
                     <td>{data.student_name}</td>
                     <td>{data.classname}</td>
                     <td>{data.roll_no}</td>

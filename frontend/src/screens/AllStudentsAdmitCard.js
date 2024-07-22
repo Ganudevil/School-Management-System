@@ -27,7 +27,7 @@ const AllStudentsAdmitCard = () => {
   return (
     // const AdmitCard = ({ examination, name, classname, rollno, image }) => {
 
-    <div className='container1'>
+    <div className='container1 bg2'>
       <div className='exam'>
         {/* <form onSubmit={handleSubmit}>
           <input

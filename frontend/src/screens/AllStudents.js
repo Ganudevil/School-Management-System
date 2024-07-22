@@ -51,7 +51,7 @@ const AllStudents = ({  }) => {
                 <tr>
                   <th>SN</th>
                   {/* <th>ID</th> */}
-                  <th>Photo</th>
+                  {/* <th>Photo</th> */}
                   <th>Student Name</th>
                   <th>Class</th>
                   <th>Roll No</th>
@@ -77,9 +77,9 @@ only we first should have the data of that class only
                   <tr key={data._id} className='contents'>
                     <td>{i++}</td>
                     {/* <td>{data._id}</td> */}
-                    <td>
+                    {/* <td>
                       <img style={{ height: '50px' }} src={data.image} alt='' />
-                    </td>
+                    </td> */}
                     <td>{data.student_name}</td>
                     <td>{data.classname}</td>
                     <td>{data.roll_no}</td>

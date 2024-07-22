@@ -1,5 +1,6 @@
 #sidebar {
-    background: #56a50c;
+    /* background: #56a50c; */
+    background: #FFC0CB;
     grid-area: sidebar;
     /* overflow-y: scroll; */
     overflow-y: auto;
@@ -46,7 +47,7 @@
     margin-bottom: 5px;
     padding: 0 10px;
     font-weight: 700;
-    background: rgb(1, 119, 50);
+    background: #A020F0;
     padding:10px;
     /* border:20px solid red; */
     border-radius: 10px;
@@ -67,16 +68,16 @@
   
   .active_menu_link {
     background: #d61663;
-    color: #350bf0;
+    color: #fff;
   }
   
   .active_menu_link .linked {
-    color: white;
+    color: white !important;
   }
   
-  .sidebar__link  .linked{
+  .sidebar__link .linked{
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 10px;
     font-weight: 700;
     /* margin-right: 2px; */

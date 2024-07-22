@@ -11,9 +11,9 @@ main {
     
     /* grid-template-rows: 1fr  2fr; */
  }
-  .main__container {
-    padding: 20px 35px;
-  }
+  /* .main__container {
+    padding: 20px 0px;
+  } */
   
   .main__title {
     display: flex;

@@ -6,6 +6,7 @@ const connectDB = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true,
       useFindAndModify: false,
+      dbName: "schoolmanagement"
     })
     console.log('MongoDB connected.')
   } catch (error) {

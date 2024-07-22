@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const StudentAdmitCard = () => {
   return (
-    <div className='container1'>
+    <div className='container1 bg2' style={{ minHeight: "100vh", width: "100vw" }}>
       <div className='admitCard-outer'>
         {/* button is an inline element */}
         <Link className='link' to='/admit_card/allstudents'>

@@ -10,6 +10,7 @@ import './Student.css'
 const StudentDeepAttendance = ({ match }) => {
   const matchid = match.params.class
   const [studentlist, setStudentlist] = useState([])
+  const [markedStudentlist, setMarkedStudentlist] = useState([])
   const [present, setPresent] = useState({})
   const dispatch = useDispatch()
   const [clicked, setClicked] = useState(false)
@@ -40,12 +41,28 @@ const StudentDeepAttendance = ({ match }) => {
       type: STUDENT_ATTENDANCE_RESET,
     })
     dispatch(classlistStudent(matchid))
-  }, [dispatch, matchid])
+
+    fetchAttendenceLst()
+  }, [dispatch, matchid]);
+
+  const fetchAttendenceLst = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:5000/api/students/class/${matchid}/attendance`
+      );
+      console.log(res);
+      setMarkedStudentlist(res.data.students)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   var i = 1
   const submitAttendance = () => {
     // console.log(studentlist)
     console.log('students list', students)
     dispatch(studentAttendances(matchid, students))
+    fetchAttendenceLst()
   }
   const toggleAttendance = (id) => {
     setPresent((prev) => ({
@@ -58,13 +75,19 @@ const StudentDeepAttendance = ({ match }) => {
     console.log('students', students)
   }
 
+  const date = new Date();
+
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
   return (
-    <div className='container1'>
+    <div className='container1 bg2' style={{ minHeight: "100vh", width: "100vw" }}>
       <div className='attendance-outer'>
         <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>
           Attendance for the date of{' '}
-          <span style={{ background: 'red' }}>
-            {new NepaliDate().format('YYYY-MM-D')}
+          <span style={{ background: '#A020F0' }}>
+            {"  " + day + "/" + month + "/" + year}
           </span>{' '}
         </h1>
         {studentlist.length > 0 && (
@@ -88,18 +111,19 @@ const StudentDeepAttendance = ({ match }) => {
         ) : error ? (
           <Message variant='danger' message={error} />
         ) : (
-          <table style={{ margin: 'auto', background: 'green' }}>
-            <thead>
-              <tr>
-                <th>SN</th>
-                <th>Student Name</th>
-                <th>Roll No</th>
-                <th>Attendance</th>
-              </tr>
-            </thead>
-            <tbody>
-              {studentlist.length > 0
-                ? // {  <h1></h1>}
+          <>
+            <table style={{ margin: 'auto', background: 'green' }}>
+              <thead>
+                <tr>
+                  <th>SN</th>
+                  <th>Student Name</th>
+                  <th>Roll No</th>
+                  <th>Attendance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {studentlist.length > 0
+                  ? // {  <h1></h1>}
                   studentlist.map((student) => (
                     <tr key={student._id} className='attendance'>
                       <td>{i++}</td>
@@ -114,7 +138,7 @@ const StudentDeepAttendance = ({ match }) => {
                       </td>
                     </tr>
                   ))
-                : studentsfinal &&
+                  : studentsfinal &&
                   studentsfinal.map((student) => (
                     <tr key={student._id} className='attendance'>
                       <td>{i++}</td>
@@ -129,8 +153,10 @@ const StudentDeepAttendance = ({ match }) => {
                       </td>
                     </tr>
                   ))}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+
+          </>
         )}
         {studentsfinal && (
           <button
@@ -146,6 +172,54 @@ const StudentDeepAttendance = ({ match }) => {
             Submit
           </button>
         )}
+
+        <p style={{ fontWeight: "bold" }}>Today's Attendance List</p>
+        <table style={{ margin: 'auto', background: 'green' }}>
+          <thead>
+            <tr>
+              <th>SN</th>
+              <th>Student Name</th>
+              <th>Roll No</th>
+              <th>Attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {markedStudentlist.length > 0
+              ? // {  <h1></h1>}
+              markedStudentlist.map((student, index) => (
+                <tr key={student._id} className='attendance'>
+                  <td>{index + 1}</td>
+                  <td>{student.student_name}</td>
+                  <td>{student.roll_no}</td>
+                  <td
+                  // onClick={() => toggleAttendance(student._id)}
+                  // className={student.present ? 'present' : 'absent'}
+                  // style={{ cursor: 'pointer' }}
+                  >
+                    {student.present ? 'Present' : 'Absent'}
+                  </td>
+                </tr>
+              ))
+              :
+              // studentsfinal &&
+              // studentsfinal.map((student) => (
+              //   <tr key={student._id} className='attendance'>
+              //     <td>{i++}</td>
+              //     <td>{student.student_name}</td>
+              //     <td>{student.roll_no}</td>
+              //     <td
+              //       onClick={() => toggleAttendance(student._id)}
+              //       className={present[student._id] ? 'present' : 'absent'}
+              //       style={{ cursor: 'pointer' }}
+              //     >
+              //       {present[student._id] ? 'Present' : 'Absent'}
+              //     </td>
+              //   </tr>
+              // )
+              ""
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   )

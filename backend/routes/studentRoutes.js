@@ -34,6 +34,7 @@ router.get(
 router.get(
   '/class/:id/attendance',
   asyncHandler(async (req, res) => {
+    const id = req.params.id
     const students = await StudentAttendance.findOne({
       attendance_date: new NepaliDate().format('YYYY-MM-D'),
       classname: req.params.id,

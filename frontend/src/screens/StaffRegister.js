@@ -214,7 +214,7 @@ const StaffRegister = ({ history }) => {
                   required
                 />
               </div>
-              <div className='form-control'>
+              {/* <div className='form-control'>
                 <label htmlFor='name'>
                   Upload Picture
                   <input
@@ -231,7 +231,7 @@ const StaffRegister = ({ history }) => {
                     message='Picture uploaded successfully'
                   />
                 )}
-              </div>
+              </div> */}
               {/* <div className="register-btn"> */}
               {/* </div> */}
             </div>

@@ -33,7 +33,7 @@ const AllStaffs = ({}) => {
   // const loading1=true
   // const staffs = []
   return (
-    <div className='container3'>
+    <div className='container3 bg2'>
       <div className='outer'>
         <input type='text' placeholder='Search for staff...' />
         <span className='search-icon' onClick={searchSubmit}>
@@ -51,7 +51,7 @@ const AllStaffs = ({}) => {
                 <tr>
                   <th>SN</th>
                   {/* <th>ID</th> */}
-                  <th>Photo</th>
+                  {/* <th>Photo</th> */}
                   <th>Staff Name</th>
                   <th>Qualification</th>
                   <th>Staff Id</th>
@@ -80,9 +80,9 @@ only we first should have the data of that class only
                   <tr key={data._id} className='contents'>
                     <td>{i++}</td>
                     {/* <td>{data._id}</td> */}
-                    <td>
+                    {/* <td>
                       <img style={{ height: '50px' }} src={data.image} alt='' />
-                    </td>
+                    </td> */}
                     <td>{data.staff_name}</td>
                     <td>{data.qualification}</td>
                     <td>{data.staffId}</td>

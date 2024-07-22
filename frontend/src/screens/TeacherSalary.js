@@ -43,8 +43,9 @@ const TeacherSalary = ({ history }) => {
       history.push('/login')
     }
   }, [userCred, history])
+  
   return (
-    <div className='container1' style={{ marginTop: '10px' }}>
+    <div className='container1 bg1' style={{ marginTop: '0px', height: "100vh" }}>
       <div className='outer-layout'>
         <h1>Teacher Salary Section</h1>
         {valid && success && (
@@ -93,18 +94,18 @@ const TeacherSalary = ({ history }) => {
                 >
                   <option value=''>Select Month</option>
 
-                  <option value='Baisakh'>Baisakh</option>
-                  <option value='Jestha'>Jestha</option>
-                  <option value='Ashadh'>Ashadh</option>
-                  <option value='Shrawan'>Shrawan</option>
-                  <option value='Bhadra'>Bhadra</option>
-                  <option value='Ashoj'>Ashoj</option>
-                  <option value='Kartik'>Kartik</option>
-                  <option value='Mangsir'>Mangsir</option>
-                  <option value='Poush'>Poush</option>
-                  <option value='Magh'>Magh</option>
-                  <option value='Falgun'>Falgun</option>
-                  <option value='Chaitra'>Chaitra</option>
+                  <option value='January'>January</option>
+                  <option value='February'>February</option>
+                  <option value='March'>March</option>
+                  <option value='April'>April</option>
+                  <option value='May'>May</option>
+                  <option value='June'>June</option>
+                  <option value='July'>July</option>
+                  <option value='August'>August</option>
+                  <option value='September'>September</option>
+                  <option value='October'>October</option>
+                  <option value='November'>November</option>
+                  <option value='December'>December</option>
                   {/* <option value='Ten'>Ten</option> */}
                 </select>
               </div>{' '}

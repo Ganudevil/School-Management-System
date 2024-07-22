@@ -9,9 +9,10 @@ const StudentDetails = () => {
     console.log('clicked')
     // alert("Search icon is clicked.")
   }
+
   return (
-    <div className='container2'>
-      <div className='outer'>
+    <div className='container2 bg2' style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className='outer' style={{ width: "100%" }}>
         {/* <input type='text' placeholder='Search for student...' />
         <span className='search-icon' onClick={searchSubmit}>
           <i className='fas fa-search'></i>
